@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -8,6 +10,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
+  font-family: 'Antonio', sans-serif;
 }
 
 /* Video Background */
@@ -88,10 +91,14 @@ button {
   margin-top: 15px;
   border: none;
   text-transform: uppercase;
-  background: #006959;
+  background: #006923;
   color: white;
   cursor: pointer;
   outline: none;
+}
+
+button:hover {
+  filter: brightness(110%);
 }
 
 /* Countdown */
