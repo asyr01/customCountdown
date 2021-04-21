@@ -126,6 +126,35 @@ li span {
   top: 60px;
 }
 
+.complete-title {
+  font-size: 50px;
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(225, 26, 26);
+  }
+
+  25% {
+    color: rgb(248, 225, 52);
+    transform: skew(-10deg);
+  }
+
+  50% {
+    color: rgb(16, 187, 50);
+    transform: skew(10deg);
+  }
+
+  75% {
+    color: rgb(26, 33, 225);
+  }
+
+  100% {
+    color: rgb(225, 26, 202);
+  }
+}
+
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .video-background {
@@ -174,5 +203,9 @@ li span {
 
   li span {
     font-size: 40px;
+  }
+
+  .complete-title {
+    font-size: 25px;
   }
 }
