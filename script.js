@@ -1,10 +1,12 @@
 const inputContainer = document.getElementById('input-container');
 const countdownForm = document.getElementById('countdownForm');
 const dateEl = document.getElementById('date-picker');
+const alertText = document.getElementById('alert-text');
 
 const countdownEl = document.getElementById('countdown');
 const countdownElTitle = document.getElementById('countdown-title');
 const countdownBtn = document.getElementById('countdown-button');
+
 const timeElements = document.querySelectorAll('span');
 
 // Global variables for title and date
@@ -12,6 +14,7 @@ let countdownTitle = '';
 let countdownDate = '';
 let countdownValue = Date;
 let countdownActive;
+let alerted = false;
 
 const second = 1000;
 const minute = second * 60;
@@ -54,9 +57,13 @@ function updateCountdown(e) {
   e.preventDefault();
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
-  // Get number version of current date, updateDOM.
-  countdownValue = new Date(countdownDate).getTime();
-  updateDOM();
+  // Check for valid date
+  if (countdownDate === '' && !alerted) {
+    alertText.hidden = false;
+  } else if (countdownDate) {
+    countdownValue = new Date(countdownDate).getTime();
+    updateDOM();
+  }
 }
 
 // Reset all values
@@ -67,6 +74,7 @@ function reset() {
   // Stop the countdown with clearInterval
   clearInterval(countdownActive);
   // Reset Values
+  alertText.hidden = true;
   countdownTitle = '';
   countdownDate = '';
 }
