@@ -10,7 +10,7 @@ const timeElements = document.querySelectorAll('span');
 
 const completeEl = document.getElementById('complete');
 const completeElInfo = document.getElementById('complete-info');
-const completeBtn = document.getElementById('complete-btn');
+const completeBtn = document.getElementById('complete-button');
 
 // Global variables for title and date
 let countdownTitle = '';
@@ -81,6 +81,7 @@ function updateCountdown(e) {
 function reset() {
   // Firstly hide countdown and show input.
   countdownEl.hidden = true;
+  completeEl.hidden = true;
   inputContainer.hidden = false;
   // Stop the countdown with clearInterval
   clearInterval(countdownActive);
@@ -93,3 +94,4 @@ function reset() {
 // Event listeners
 countdownForm.addEventListener('submit', updateCountdown);
 countdownBtn.addEventListener('click', reset);
+completeBtn.addEventListener('click', reset);
