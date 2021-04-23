@@ -6,8 +6,11 @@ const alertText = document.getElementById('alert-text');
 const countdownEl = document.getElementById('countdown');
 const countdownElTitle = document.getElementById('countdown-title');
 const countdownBtn = document.getElementById('countdown-button');
-
 const timeElements = document.querySelectorAll('span');
+
+const completeEl = document.getElementById('complete');
+const completeElInfo = document.getElementById('complete-info');
+const completeBtn = document.getElementById('complete-btn');
 
 // Global variables for title and date
 let countdownTitle = '';
