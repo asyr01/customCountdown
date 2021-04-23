@@ -62,7 +62,7 @@ function updateCountdown(e) {
 // Reset all values
 function reset() {
   // Firstly hide countdown and show input.
-  countdownEl.hiden = true;
+  countdownEl.hidden = true;
   inputContainer.hidden = false;
   // Stop the countdown with clearInterval
   clearInterval(countdownActive);
