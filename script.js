@@ -98,6 +98,15 @@ function reset() {
   countdownDate = '';
 }
 
+// Restore value from localStorage
+function restorePreviousCountdown() {
+  // check if there is a value
+  if (localStorage.getItem('countdown')) {
+    inputContainer.hidden = true;
+    savedCountdown = JSON.parse(localStorage.getItem('countdown'));
+  }
+}
+
 // Event listeners
 countdownForm.addEventListener('submit', updateCountdown);
 countdownBtn.addEventListener('click', reset);
