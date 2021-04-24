@@ -18,6 +18,7 @@ let countdownDate = '';
 let countdownValue = Date;
 let countdownActive;
 let alerted = false;
+let savedCountdown;
 
 const second = 1000;
 const minute = second * 60;
@@ -68,6 +69,11 @@ function updateCountdown(e) {
   e.preventDefault();
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
+  savedCountdown = {
+    title: countdownTitle,
+    date: countdownDate,
+  };
+  console.log(savedCountdown);
   // Check for valid date
   if (countdownDate === '' && !alerted) {
     alertText.hidden = false;
