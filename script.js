@@ -74,7 +74,9 @@ function updateCountdown(e) {
     date: countdownDate,
   };
 
-  localStorage.setItem('countdown', JSON.stringify(savedCountdown));
+  if (countdownDate) {
+    localStorage.setItem('countdown', JSON.stringify(savedCountdown));
+  }
   // Check for valid date
   if (countdownDate === '' && !alerted) {
     alertText.hidden = false;
@@ -96,6 +98,7 @@ function reset() {
   alertText.hidden = true;
   countdownTitle = '';
   countdownDate = '';
+  localStorage.removeItem('countdown');
 }
 
 // Restore value from localStorage
@@ -115,3 +118,6 @@ function restorePreviousCountdown() {
 countdownForm.addEventListener('submit', updateCountdown);
 countdownBtn.addEventListener('click', reset);
 completeBtn.addEventListener('click', reset);
+
+// On Load, check localStorage
+restorePreviousCountdown();
