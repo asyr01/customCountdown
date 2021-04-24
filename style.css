@@ -34,7 +34,7 @@ video {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(194, 174, 174, 0.5);
+  background: rgba(194, 174, 174, 0.45);
 }
 
 /* Container */
@@ -170,7 +170,6 @@ li span {
 
   video {
     object-fit: cover;
-    object-position: 70%;
     margin-top: -1px;
   }
 
