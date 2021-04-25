@@ -15,7 +15,7 @@ const completeBtn = document.getElementById('complete-button');
 // Global variables for title and date
 let countdownTitle = '';
 let countdownDate = '';
-let countdownValue = Date;
+let countdownValue = new Date();
 let countdownActive;
 let alerted = false;
 let savedCountdown;
